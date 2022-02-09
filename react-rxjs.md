@@ -269,3 +269,19 @@ Note:
 --
 
 ## What is good about this approach
+
+State and views aren't mingled <!-- .element: class="fragment -->
+
+Everything is synchronous in react <!-- .element: class="fragment -->
+
+Every state can be made globall available if needed <!-- .element: class="fragment -->
+
+Components only update when the data they care about changes <!-- .element: class="fragment -->
+
+--
+
+## Drawbacks
+
+Steep learning curve! <!-- .element: class="fragment -->
+
+Thinking Reactively <!-- .element: class="fragment -->
