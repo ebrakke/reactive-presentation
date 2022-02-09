@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reactivity in React</title>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown data-separator-notes="^Note:">
+                <textarea data-template>
+                    # Reactivity in React
+                    Using reactive programming to manage data loading and state
+
+                    ---
+
+                    ## What we will cover
+
+                    ---
+
+                    Current React state management (Redux, Hooks + Context)
+
+                    Pitfalls of state management and React <!-- .element: class="fragment" -->
+
+                    Reactive Programming <!-- .element: class="fragment" -->
+
+                    State as a tree <!-- .element: class="fragment" -->
+
+                    React RxJS <!-- .element: class="fragment" -->
+
+                    ---
+
+                    ## Application Example
+
+                    We will be making a puppy adoption app
+
+                    A user can input some preferences for dogs, and we will load matches<!-- .element: class="fragment"-->
+
+                    A user can choose look at the matches and choose yes or no on the puppy <!-- .element: class="fragment"-->
+
+                    ---
+                    <iframe src="https://codesandbox.io/embed/star-wars-dating-no-functionality-6ok6z?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+                    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+                    title="pet-adoption-no-functionality"
+                    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+                  ></iframe>
+
+                </textarea>
+            </section>
+            
+            <section data-markdown>
+                <textarea data-template>
+                    ## Current React state management
+
+                    ---
+
+                    Redux
+
+                    Hooks and Context <!-- .element: class="fragment" -->
+
+                    Probably many  more <!-- .element: class="fragment" -->
+
+                    Notes:
+                    * Redux and Hooks and Context seem to be the most popular methods of state management
+                </textarea>
+            </section> 
+
+            <section data-markdown="redux.md" data-separator-notes="^Note:" data-separator-vertical="^\n--\n">
+            </section>
+
+            <section data-markdown="hooks-and-context.md" data-separator-notes="^Note:" data-separator-vertical="^\n--\n">
+            </section>
+
+            <section data-markdown data-separator-vertical="^\n--\n">
+                <textarea data-template>
+                    ## Common problems across both approaches
+
+                    --
+
+                    Deriving data dependencies is hard
+
+                    Performance issues: Redux is better than Context, but can still lead to some perf issues if not used correctly <!-- .element: class="fragment" -->
+
+                    Handling Async State <!-- .element: class="fragment" -->
+
+                    Where do I put X? <!-- .element: class="fragment" -->
+
+                    Note:
+                    * Redux has `useSelector` which will only cause a component to reload when the data it has selected has changed
+                    * Where does this state live in the store? Can I still use local state with redux?
+
+                    --
+
+                    ## React's fundamental flaw
+
+                    All data is treated synchronously, even though web applications are inherently asynchronous
+                    
+                </textarea>
+            </section>
+            
+            <section>
+                <h2>What is reactive programming?</h2>
+            </section>
+            
+            <section>
+                <h2>State as a tree</h2>
+            </section>
+            
+            <section>
+                <h2>Using react-rxjs</h2>
+            </section>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script type="module">
+        import Reveal from 'reveal.js'
+        import Markdown from 'reveal.js/plugin/markdown/markdown'
+        import Speaker from 'reveal.js/plugin/notes/notes'
+        import Highlight from 'reveal.js/plugin/highlight/highlight'
+
+        Reveal.initialize({
+            plugins: [Markdown, Speaker, Highlight],
+            slideNumber: 'c/t',
+            hash: true,
+        })
+    </script>
+</body>
+</html>
